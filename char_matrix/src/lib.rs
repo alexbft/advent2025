@@ -15,6 +15,10 @@ impl CharMatrix {
     pub fn get(&self, x: i32, y: i32) -> char {
         self.chars[y as usize][x as usize]
     }
+    
+    pub fn set(&mut self, x: i32, y: i32, c: char) {
+        self.chars[y as usize][x as usize] = c;
+    }
 
     pub fn safe_get(&self, x: i32, y: i32) -> Option<char> {
         if self.in_bounds(x, y) {

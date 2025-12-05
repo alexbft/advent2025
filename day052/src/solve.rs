@@ -8,13 +8,14 @@ pub fn solve(input: &str) -> usize {
     let mut fresh = parse_fresh(fresh_part);
     fresh.sort_by_key(|range| *range.start());
     let mut fresh_merged: RangeVec = vec![];
-    let mut prev = fresh[0].clone();
-    for range in fresh.iter().skip(1) {
+    let mut fresh_iter = fresh.into_iter();
+    let mut prev = fresh_iter.next().unwrap();
+    for range in fresh_iter {
         if prev.contains(range.start()) {
             prev = *prev.start()..=max(*prev.end(), *range.end());
         } else {
-            fresh_merged.push(prev.clone());
-            prev = range.clone();
+            fresh_merged.push(prev);
+            prev = range;
         }
     }
     fresh_merged.push(prev);

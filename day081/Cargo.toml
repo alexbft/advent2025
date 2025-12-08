@@ -1,0 +1,8 @@
+[package]
+name = "day081"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+indoc = "2.0.7"
+partial_sort = "1.0.0"

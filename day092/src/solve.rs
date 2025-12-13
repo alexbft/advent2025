@@ -45,7 +45,7 @@ fn line_intersects_rect(p0: &Point, p1: &Point, top_left: &Point, bottom_right: 
     let (x0, y0) = *top_left;
     let (x1, y1) = *bottom_right;
 
-    if p0.0 == p1.0 {
+    if p0.0 == p1.0 {                      
         let lx = p0.0;
         if lx <= x0 || lx >= x1 {
             return false;
